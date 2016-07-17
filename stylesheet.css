@@ -5,3 +5,4 @@ p { color: green}
 p.highlight { background: orange; color: black; }
 #note p { font-style: italic }
 a:hover { color: green }
+.cool { font-family: "Comic Sans MS", cursive, sans-serif }
