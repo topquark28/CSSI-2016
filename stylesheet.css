@@ -1,0 +1,7 @@
+h1 { color: darkblue }
+#foo { color: red }
+.bar { color: blue }
+p { color: green}
+p.highlight { background: orange; color: black; }
+#note p { font-style: italic }
+a:hover { color: green }
