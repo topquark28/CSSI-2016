@@ -18,8 +18,17 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        self.response.write('Hello, Chris!')
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+
+class GoodByeHandler(webapp2.RequestHandler):
+  def get(self):
+    self.response.write('Goodbye, Dave.')
+
+
+handlers = [
+  ('/', MainHandler),
+  ('/bye', GoodByeHandler),
+]
+
+app = webapp2.WSGIApplication(handlers, debug=True)
