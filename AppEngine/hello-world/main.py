@@ -14,21 +14,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import logging
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        logging.info("%s.get()" % self.__class__.__name__)
         self.response.write('Hello, Chris!')
 
 
+class LogicHandler(webapp2.RequestHandler):
+  def get(self):
+    logging.info("%s.get()" % self.__class__.__name__)
+    if True:
+      self.response.write('The truth will set you free.')
+    else:
+      self.response.write('How did I get here?')
+
 class GoodByeHandler(webapp2.RequestHandler):
   def get(self):
+    logging.info("%s.get()" % self.__class__.__name__)
     self.response.write('Goodbye, Dave.')
 
 
 handlers = [
   ('/', MainHandler),
   ('/bye', GoodByeHandler),
+  ('/logic', LogicHandler),
 ]
 
 app = webapp2.WSGIApplication(handlers, debug=True)
