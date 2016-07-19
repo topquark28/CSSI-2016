@@ -1,0 +1,31 @@
+application: hello-templates
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico  # matches: "favicon.ico"
+#- url: /favicon.ico  # matches: "favicon7ico" and "favicon.ico"
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /static  # match what you request in the HTML
+  static_dir: images  # the location of the files
+
+#- url: /helloworld\.jpg
+#  static_files: helloworld.jpg
+#  upload: helloworld\.jpg
+#
+#- url: /hiya\.jpg
+#  static_files: hiya.jpg
+#  upload: hiya\.jpg
+
+- url: .*   # matches anything
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: latest
+- name: webapp2
+  version: "2.5.2"
