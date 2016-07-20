@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Query Results</title>
+  </head>
+  <body>
+    {% if filter_str %}
+    <p>The query filtered with:
+    "<strong>{{ filter_str }}</strong>"
+    returned:</p>
+    {% endif %}
+    <pre>
+    {% for student in students %}
+    {{ student }}
+    {% endfor %}
+    </pre>
+  </body>
+</html>

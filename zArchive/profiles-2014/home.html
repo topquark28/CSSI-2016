@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSSI Profiles</title>
+  </head>
+  <body>
+    <h1>CSSI Profiles</h1>
+    <p>Profiles of students in the CSSI Program.</p>
+    <ul>
+      {% for student in students %}
+        <li>
+          <a href="/profile?name={{ student.name }}">
+              {{ student.full_name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Datastore Demo Home</title>
+  </head>
+  <body>
+    <h2>Available handlers:</h2>
+    <ul>
+    {% for handler in handlers %}
+      <li><a href="{{ handler.path }}">{{ handler.handler }}</a></li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

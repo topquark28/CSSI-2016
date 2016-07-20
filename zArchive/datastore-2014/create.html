@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create a New Profile</title>
+  </head>
+  <body>
+    {% if name and university %}
+    <div class="status">
+      You created a student with the name:
+      <strong>{{ name }}</strong>
+      and the university:
+      <strong>{{ university }}</strong>.
+    </div>
+    <br><br>
+    {% endif %}
+    <h1>Create a New Profile</h1>
+    <form action="/newstudent">
+      <label>Name:
+        <input type="text" name="name">
+      </label>
+
+      <br><br>
+
+      <label>University:
+        <input type="text" name="university">
+      </label>
+
+      <br><br>
+
+      <button type="submit">Add Student</button>
+    </form>
+  </body>
+</html>
